@@ -1,0 +1,116 @@
+# !!! Generate a token by the command: 
+#     php bin/console app:jwt
+
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NzI5NjI4MDgsImV4cCI6MTc3Mjk2NjQwOCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGVidWdAbG9jYWwifQ.Rah50-LcHePeSDDl2q2xj1dDMU8bbGyBExoj-GDe0SL4UjKSHaQPyd-QzPTQpPQgflEj76qv5_a0hu6j7igNIL92vGI8MY4nsnlgoBpHSlVwntrBxaE9CeqeKvbxCr4xBWq49cUcSS_kMbvN1-Mv23DW5QQ2C_vvgOg_CyWqCh8foMxsEvKjviNNA-6TdfXswaZ47Gg1lbb_eOtNLTYNnQzNY-Su84kuW3JtZWhVbjXtIM_qwkqf7FDXKOWCE5giCaKUHJulL3Ufo3QhjOiUisTsahTi20-s8PNnxZREDDtTKMph_4JpLMBJQm1SUuJpRUvfbDvcNlOooG9oWBcYGcrUQ4fJtkzNZGY6G5m8_8iWhgeT1Ov7Fyg2T8GYqy5Y8wa-w9cuPNIJoIVELeRzsDeCS6qWuttF0L7icBjo1Q1qKQAayHgz2mJAykt84iW3D9pdGltterv8RY8jlhksIy_aCBowTTbXwI_6ByuNKqS9F5j6tfNxnRnKfv_N9-u8xApaaszgdeVcER9DSwyRWmjwtct62LvOvPiAvoRTzDwQfvby6G_WUVMQCIuUnjZEsAvU7EpUdsmI1fni4WafRFG3IczzeEE2fG3r9s7IQRqp6CP27ZJ-ncVNJckiBjsLgCmpiL1PaXsb5xY7LJw_pSt9W7PMgWGo2DeabKwRI4Y
+
+@url = http://localhost:8080
+# @url = http://localhost:8000
+
+#------------------ Company -----------------
+
+### Create company
+POST {{url}}/api/companies
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Newcomp1",
+  "email": "newcomp1@example.com"
+}
+
+### Get company by Id
+GET {{url}}/api/companies/1
+Content-Type: application/json
+
+### Get companies
+GET {{url}}/api/companies
+Content-Type: application/json
+
+### Update company
+PUT {{url}}/api/companies/6
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Newcomp2",
+  "email": "newcomp2@example.com"
+}
+
+### Delete company
+DELETE {{url}}/api/companies/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------ Employee -----------------
+
+### Create employee
+POST {{url}}/api/employees
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Employee1",
+  "email": "employee1@example.com",
+  "companyId": 1
+}
+
+### Get employee by Id
+GET {{url}}/api/employees/14
+Content-Type: application/json
+
+### Get employees
+GET {{url}}/api/employees
+Content-Type: application/json
+
+### Update employee
+PUT {{url}}/api/employees/16
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Employee2",
+  "email": "employee2@example.com",
+  "companyId": 2
+}
+
+### Delete employee
+DELETE {{url}}/api/employees/16
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+#------------------ Project -----------------
+
+### Create project
+POST {{url}}/api/projects
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Project2",
+  "description": "Description for Project2",
+  "companyId": 2
+}
+
+### Get projects
+GET {{url}}/api/projects
+Content-Type: application/json
+
+### Get project by Id
+GET {{url}}/api/projects/1
+Content-Type: application/json
+
+### Update project
+PUT {{url}}/api/projects/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "Project1",
+  "description": "New Date: escription for Project1",
+  "companyId": 1
+}
+
+### Delete project
+DELETE {{url}}/api/projects/1
+Authorization: Bearer {{token}}
+Content-Type: application/json
