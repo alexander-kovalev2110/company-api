@@ -4,6 +4,18 @@ Start the project:
 docker compose up --build -d
 ```
 
+Install Composer dependencies:
+
+```
+docker compose exec php composer install
+```
+
+Create a database:
+
+```
+docker compose exec php php bin/console doctrine:database:create
+```
+
 Create tables using Doctrine migrations:
 
 ```
