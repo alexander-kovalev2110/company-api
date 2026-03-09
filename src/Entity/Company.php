@@ -19,12 +19,6 @@ class Company
     #[ORM\Column(length: 255)]
     private ?string $email = null;
 
-    // #[ORM\OneToMany(mappedBy: "company", targetEntity: Employee::class)]
-    // private Collection $employees;
-
-    // #[ORM\OneToMany(mappedBy: "company", targetEntity: Project::class)]
-    // private Collection $projects;
-
     public function getId(): ?int
     {
         return $this->id;

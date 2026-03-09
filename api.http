@@ -1,7 +1,7 @@
 # !!! Generate a token by the command: 
 #     php bin/console app:jwt
 
-@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NzI5NjI4MDgsImV4cCI6MTc3Mjk2NjQwOCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGVidWdAbG9jYWwifQ.Rah50-LcHePeSDDl2q2xj1dDMU8bbGyBExoj-GDe0SL4UjKSHaQPyd-QzPTQpPQgflEj76qv5_a0hu6j7igNIL92vGI8MY4nsnlgoBpHSlVwntrBxaE9CeqeKvbxCr4xBWq49cUcSS_kMbvN1-Mv23DW5QQ2C_vvgOg_CyWqCh8foMxsEvKjviNNA-6TdfXswaZ47Gg1lbb_eOtNLTYNnQzNY-Su84kuW3JtZWhVbjXtIM_qwkqf7FDXKOWCE5giCaKUHJulL3Ufo3QhjOiUisTsahTi20-s8PNnxZREDDtTKMph_4JpLMBJQm1SUuJpRUvfbDvcNlOooG9oWBcYGcrUQ4fJtkzNZGY6G5m8_8iWhgeT1Ov7Fyg2T8GYqy5Y8wa-w9cuPNIJoIVELeRzsDeCS6qWuttF0L7icBjo1Q1qKQAayHgz2mJAykt84iW3D9pdGltterv8RY8jlhksIy_aCBowTTbXwI_6ByuNKqS9F5j6tfNxnRnKfv_N9-u8xApaaszgdeVcER9DSwyRWmjwtct62LvOvPiAvoRTzDwQfvby6G_WUVMQCIuUnjZEsAvU7EpUdsmI1fni4WafRFG3IczzeEE2fG3r9s7IQRqp6CP27ZJ-ncVNJckiBjsLgCmpiL1PaXsb5xY7LJw_pSt9W7PMgWGo2DeabKwRI4Y
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NzMwNTkyMTIsImV4cCI6MTc3MzA2MjgxMiwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGVidWdAbG9jYWwifQ.r1bzexMlskbI8zW3idaBgnlNMgvDDoelrsmELhb0I9KqenSkrIgLQxcHVPveltVFrRJ9SkQf1wz5jbSL2XTsgwc1_pVD31ir6DfNGcq1rpn7vpLy8LyvSRhOd2ggVgrjs9OI_75pKct_tmDlljLh-wy9nEHifl3qW-dwsttWag-AJZdZtvtFA6aR78p1UiNb7pB1Q4imcWrWn5XHk-2VT7Ies9tEJTMMz3h6AxzA8zw-ZlIBlVF0g_nksEmT6ckGjvHAiq3k-kmKqtpk_Wtkex2ETFn8aEQqQlea7ss55ONDIuCb9eQ1xPjX5XaSCuXGuRaPnZIBvyZM_xK_Da2tXQ
 
 @url = http://localhost:8080
 # @url = http://localhost:8000
@@ -14,12 +14,22 @@ Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
-  "name": "Newcomp1",
+  "name": "NewComp1",
   "email": "newcomp1@example.com"
 }
 
+### Create company Error
+POST {{url}}/api/companies
+Authorization: Bearer {{token}}
+Content-Type: application/json
+
+{
+  "name": "",
+  "email": "wrong-email"
+}
+
 ### Get company by Id
-GET {{url}}/api/companies/1
+GET {{url}}/api/companies/7
 Content-Type: application/json
 
 ### Get companies
@@ -27,17 +37,17 @@ GET {{url}}/api/companies
 Content-Type: application/json
 
 ### Update company
-PUT {{url}}/api/companies/6
+PUT {{url}}/api/companies/19
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
 {
   "name": "Newcomp2",
-  "email": "newcomp2@example.com"
+  "email": "newcomp2example.com"
 }
 
 ### Delete company
-DELETE {{url}}/api/companies/1
+DELETE {{url}}/api/companies/21
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -111,6 +121,6 @@ Content-Type: application/json
 }
 
 ### Delete project
-DELETE {{url}}/api/projects/1
+DELETE {{url}}/api/projects/2
 Authorization: Bearer {{token}}
 Content-Type: application/json

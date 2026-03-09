@@ -24,3 +24,8 @@ services:
     App\ArgumentResolver\:
         resource: '../src/ArgumentResolver/'
         tags: ['controller.argument_value_resolver']
+
+    App\EventListener\ApiExceptionListener:
+        tags:
+            - { name: kernel.event_listener, event: kernel.exception }
+
