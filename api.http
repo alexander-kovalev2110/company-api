@@ -116,7 +116,7 @@ Content-Type: application/json
 
 {
   "name": "Project1",
-  "description": "New Date: escription for Project1",
+  "description": "New Date: Description for Project1",
   "companyId": 1
 }
 

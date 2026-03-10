@@ -1,5 +1,5 @@
 <?php
-// src/Security/DummyUserProvider.php
+
 namespace App\Security;
 
 use Symfony\Component\Security\Core\User\UserInterface;
@@ -27,7 +27,6 @@ class DummyUserProvider implements UserProviderInterface
                 return ['ROLE_USER'];
             }
 
-            // ⚡ добавляем : void
             public function eraseCredentials(): void {}
         };
     }
@@ -42,7 +41,7 @@ class DummyUserProvider implements UserProviderInterface
         return true;
     }
 
-    // устаревший метод для совместимости
+    // deprecated method for compatibility
     public function loadUserByUsername(string $username): UserInterface
     {
         return $this->loadUserByIdentifier($username);

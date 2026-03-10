@@ -1,5 +1,5 @@
 <?php
-// src/Command/DebugJwtCommand.php
+
 namespace App\Command;
 
 use Lexik\Bundle\JWTAuthenticationBundle\Services\JWTTokenManagerInterface;
@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\User\UserInterface;
 
 #[AsCommand(
     name: 'app:jwt',
-    description: 'Generate a JWT token for debugging'
+    description: 'Generate a JWT token for testing/debugging'
 )]
 class DebugJwtCommand extends Command
 {
@@ -23,10 +23,10 @@ class DebugJwtCommand extends Command
 
     protected function execute(InputInterface $input, OutputInterface $output): int
     {
-        // создаём пользователя “на лету” без БД
+        // Create a virtual user without a database.
         $user = new class implements UserInterface {
             public function getRoles(): array { return ['ROLE_USER']; }
-            public function eraseCredentials(): void {}   // ⚡ обязательно void
+            public function eraseCredentials(): void {}   
             public function getUserIdentifier(): string { return 'debug@local'; }
         };
 
