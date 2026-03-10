@@ -4,6 +4,7 @@ namespace App\EventListener;
 
 use Symfony\Component\HttpKernel\Event\ExceptionEvent;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpKernel\Exception\HttpExceptionInterface;
 
 class ApiExceptionListener
 {
@@ -11,9 +12,18 @@ class ApiExceptionListener
     {
         $e = $event->getThrowable();
 
+        // If the exception implements HttpExceptionInterface, we take the HTTP code from it
+        if ($e instanceof HttpExceptionInterface) {
+            $statusCode = $e->getStatusCode();
+        } else {
+            // Otherwise, we use the exception code if it is correct for HTTP, otherwise 400
+            $statusCode = ($e->getCode() >= 100 && $e->getCode() < 600) ? $e->getCode() : 400;
+        }
+
         $response = new JsonResponse([
-            'error' => $e->getMessage()
-        ], 400);
+            'error' => $e->getMessage(),
+            'code'  => $statusCode,
+        ], $statusCode);
 
         $event->setResponse($response);
     }
