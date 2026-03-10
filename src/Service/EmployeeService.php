@@ -21,6 +21,10 @@ class EmployeeService
         $employee->setEmail($dto->email);
 
         $company = $this->companyRepository->find($dto->companyId);
+        if (!$company) {
+            throw new NotFoundHttpException('Company not found');
+        }
+
         $employee->setCompany($company);
 
         $this->em->persist($employee);
@@ -35,6 +39,10 @@ class EmployeeService
         $employee->setEmail($dto->email);
 
         $company = $this->companyRepository->find($dto->companyId);
+        if (!$company) {
+            throw new NotFoundHttpException('Company not found');
+        }
+        
         $employee->setCompany($company);
 
         $this->em->flush();

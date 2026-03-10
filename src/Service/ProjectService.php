@@ -21,6 +21,10 @@ class ProjectService
         $project->setDescription($dto->description);
 
         $company = $this->companyRepository->find($dto->companyId);
+        if (!$company) {
+            throw new NotFoundHttpException('Company not found');
+        }
+        
         $project->setCompany($company);
 
         $this->em->persist($project);
@@ -35,6 +39,10 @@ class ProjectService
         $project->setDescription($dto->description);
 
         $company = $this->companyRepository->find($dto->companyId);
+        if (!$company) {
+            throw new NotFoundHttpException('Company not found');
+        }
+        
         $project->setCompany($company);
 
         $this->em->flush();

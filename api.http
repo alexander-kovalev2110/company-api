@@ -1,7 +1,7 @@
 # !!! Generate a token by the command: 
 #     php bin/console app:jwt
 
-@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NzMwNjIyMzUsImV4cCI6MTc3MzA2NTgzNSwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGVidWdAbG9jYWwifQ.wXufy_Vs_6QgdAd9W1ziflHVxOo6eqKqEWQn9u6uQbyWYCUXWf2fqICTHbXKFcSjZ7-xtYgtVR4sG-B7xpN5obNx7wwruyn-viLEgj81ffCMzNO506nDozq4DQeJSX3hX_wEv0uvXAL-4ptVvQ-xw4qQA3tWURqFXZEeX2chHiWugniHPhGWv_IeZQJZ4PiapSBcD6FpmX-5xrBBR_045bI9ququl3R1nTZ0eTCv1mmkg3QTFXqRFFtMO9-G9885S-o87VwPKUCbju8bfOC5tGEtA2XDjPdbAzFgMrHlQ2yO_-y6ZlGlspkewSl9c_WF3m38wkXOb9gOY--6_s0bzw
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NzMxNDI4OTAsImV4cCI6MTc3MzE0NjQ5MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGVidWdAbG9jYWwifQ.WaX7kO71827hP0ttkkAkKaEnK1sQaH2OGsi8yhWOWPF9Qyv06COD4eOBiVHA8joKjiIVdyz4dAjxh7-JyqmqlGYxr-ZuaLtDYfUviE70eAldfhHAm3xGnvWzsaDDfpdS0YO7_gFSISaZT5TIrIw88oavgPYI3QknUT9Bt8hMKEWnn8XNM-GUsTP8A8NTxjjB4T_yLdArknVaMyGKEgz0idYLKHwFooPNvEL-QRwGv3fMcxUN4YshbeeRDj2rWYw-xfsuIHOhWC9QLsV5JRubvjdcjhZoHFcZA-I-SNC1_Wq6i4ikKKS4brOPR2d29ulQnrcUpO17LelHlK4WD3Xz6A
 
 @url = http://localhost:8080
 # @url = http://localhost:8000
@@ -29,7 +29,7 @@ Content-Type: application/json
 }
 
 ### Get company by Id
-GET {{url}}/api/companies/7
+GET {{url}}/api/companies/1
 Content-Type: application/json
 
 ### Get companies
@@ -84,7 +84,7 @@ Content-Type: application/json
 }
 
 ### Delete employee
-DELETE {{url}}/api/employees/16
+DELETE {{url}}/api/employees/35
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
