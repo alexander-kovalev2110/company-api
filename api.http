@@ -1,8 +1,7 @@
 # !!! Generate a token by the command: 
 #     php bin/console app:jwt
 
-@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NzMxNDI4OTAsImV4cCI6MTc3MzE0NjQ5MCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGVidWdAbG9jYWwifQ.WaX7kO71827hP0ttkkAkKaEnK1sQaH2OGsi8yhWOWPF9Qyv06COD4eOBiVHA8joKjiIVdyz4dAjxh7-JyqmqlGYxr-ZuaLtDYfUviE70eAldfhHAm3xGnvWzsaDDfpdS0YO7_gFSISaZT5TIrIw88oavgPYI3QknUT9Bt8hMKEWnn8XNM-GUsTP8A8NTxjjB4T_yLdArknVaMyGKEgz0idYLKHwFooPNvEL-QRwGv3fMcxUN4YshbeeRDj2rWYw-xfsuIHOhWC9QLsV5JRubvjdcjhZoHFcZA-I-SNC1_Wq6i4ikKKS4brOPR2d29ulQnrcUpO17LelHlK4WD3Xz6A
-
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJpYXQiOjE3NzMyMjQxMTQsImV4cCI6MTc3MzIyNzcxNCwicm9sZXMiOlsiUk9MRV9VU0VSIl0sInVzZXJuYW1lIjoiZGVidWdAbG9jYWwifQ.ItI9tHvz9-W_Mzcq_he1or9eRVA_H4EpuZBBWdMKEhDOb163uESydnHWTyeYJ9zH3uhaVYJKCJ60a-ayqr5ZkuunKLVUbqT_SJUT4okt72MQdVtEpY6IMTDnHyOzerL85cR5x25Uz0nQdLmIvukFfm7tBNtVHhMf1-pNxUtYDFVi28tgF6ow5QA-0LpESqF5KCiyIHDqGUUlhkr4aoEtrTHB1Wak6AdTVnKyGd9YVy9ZjYOY3_5Yr__HJnemXBfWUTbatMZbJNCg5qy7Mku7FyrtZC21zdWVP1hkR_sUwzd3REhQaKea3qQoSHNFwvNxePZggt78QynTs29K8o0RVw
 @url = http://localhost:8080
 # @url = http://localhost:8000
 
@@ -29,7 +28,7 @@ Content-Type: application/json
 }
 
 ### Get company by Id
-GET {{url}}/api/companies/1
+GET {{url}}/api/companies/7
 Content-Type: application/json
 
 ### Get companies
@@ -61,11 +60,11 @@ Content-Type: application/json
 {
   "name": "Employee1",
   "email": "employee1@example.com",
-  "companyId": 1
+  "companyId": 7
 }
 
 ### Get employee by Id
-GET {{url}}/api/employees/14
+GET {{url}}/api/employees/17
 Content-Type: application/json
 
 ### Get employees
@@ -73,7 +72,7 @@ GET {{url}}/api/employees
 Content-Type: application/json
 
 ### Update employee
-PUT {{url}}/api/employees/16
+PUT {{url}}/api/employees/17
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
@@ -84,7 +83,7 @@ Content-Type: application/json
 }
 
 ### Delete employee
-DELETE {{url}}/api/employees/35
+DELETE {{url}}/api/employees/38
 Authorization: Bearer {{token}}
 Content-Type: application/json
 
